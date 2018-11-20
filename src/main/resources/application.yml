@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+    show-sql: true
+  aop:
+    proxy-target-class: true
+  rabbitmq:
+    host: 127.0.0.1
+    port: 56720
+    username: guest
+    password: guest
+    publisher-confirms: true
+    virtual-host: /
+server:
+  port: 8081
