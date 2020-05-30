@@ -30,11 +30,12 @@ public class BaseDaoImpl extends HibernateDaoSupport implements BaseDao {
     }
 
     @Override
-    public <T> List<T> findBySql(String sql) throws Exception {
+    public <T> List<T> findBySql(String sql, Class<T> entityClass) {
         try {
-            return session().createQuery(sql).list();
+            return session().createQuery(sql, entityClass).list();
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+        return null;
     }
 }

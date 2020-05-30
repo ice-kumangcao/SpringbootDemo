@@ -21,12 +21,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<User> findByName(String name) {
-        String hql = "from User where username = '1'";
-        try {
-            return baseDao.findBySql(hql);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
+        String hql = String.format(" from User where username='%s'", name);
+        return baseDao.findBySql(hql, User.class);
     }
 }

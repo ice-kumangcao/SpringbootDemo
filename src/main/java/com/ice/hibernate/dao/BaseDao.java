@@ -24,5 +24,5 @@ public interface BaseDao {
      * @return
      * @throws Exception
      */
-    <T> List<T> findBySql(String sql) throws Exception;
+    <T> List<T> findBySql(String sql, Class<T> entityClass);
 }
