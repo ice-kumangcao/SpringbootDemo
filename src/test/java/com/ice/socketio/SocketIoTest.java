@@ -15,7 +15,7 @@ import java.util.Set;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SocketIoApplication {
+public class SocketIoTest {
 
     @Autowired
     private SendMessage sendMessage;

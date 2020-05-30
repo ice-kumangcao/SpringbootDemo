@@ -1,5 +1,8 @@
 package com.ice.socketio;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.socket.client.Socket;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,14 +15,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class SendMessage {
 
-    @Autowired
-    private Socket socket;
+    private final Socket socket;
+
+    public SendMessage(Socket socket) {
+        this.socket = socket;
+    }
 
     public boolean send(Message message) {
         try {
-            socket.emit("message", message.toJSONObject());
+            socket.emit("message", message);
             return true;
-        } catch (JSONException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return false;

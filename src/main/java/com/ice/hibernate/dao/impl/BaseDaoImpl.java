@@ -1,6 +1,6 @@
-package common.dao.impl;
+package com.ice.hibernate.dao.impl;
 
-import common.dao.BaseDao;
+import com.ice.hibernate.dao.BaseDao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;

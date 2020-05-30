@@ -1,10 +1,10 @@
-package system.sys.dao.impl;
+package com.ice.hibernate.dao.impl;
 
-import common.dao.BaseDao;
+import com.ice.hibernate.dao.BaseDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import system.sys.dao.BaseUserDao;
-import system.sys.entity.BaseUser;
+import com.ice.hibernate.dao.BaseUserDao;
+import com.ice.hibernate.entity.BaseUser;
 
 import javax.transaction.Transactional;
 import java.util.List;

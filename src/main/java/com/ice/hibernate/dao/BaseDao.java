@@ -1,4 +1,4 @@
-package common.dao;
+package com.ice.hibernate.dao;
 
 import org.hibernate.Session;
 import org.springframework.orm.hibernate5.HibernateTemplate;

@@ -5,5 +5,5 @@ package com.ice.springaop;
  * @date 18-11-6 上午9:59
  */
 public interface Person {
-    String sayHello(String name);
+    void sayHello(String name);
 }

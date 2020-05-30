@@ -7,13 +7,12 @@ import org.springframework.stereotype.Component;
  * @date 18-11-6 上午10:00
  */
 @Component
-public class Chinese implements Person{
+public class Student implements Person{
 
     @Timer
     @Override
-    public String sayHello(String name) {
+    public void sayHello(String name) {
         System.out.println("-- sayHello() --");
-        return "hello, " + name;
     }
 
     public void eat(String food) {

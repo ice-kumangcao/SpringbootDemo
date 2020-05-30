@@ -1,5 +1,6 @@
 package com.ice.springaop;
 
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -19,5 +20,10 @@ public class AdviceTest {
     @Before("pointcut()")
     public void before() {
         System.out.println("before");
+    }
+
+    @After("pointcut()")
+    public void after() {
+        System.out.println("after");
     }
 }

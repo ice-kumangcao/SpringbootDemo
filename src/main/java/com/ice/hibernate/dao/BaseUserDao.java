@@ -1,7 +1,7 @@
-package system.sys.dao;
+package com.ice.hibernate.dao;
 
 import org.springframework.stereotype.Repository;
-import system.sys.entity.BaseUser;
+import com.ice.hibernate.entity.BaseUser;
 
 import java.util.List;
 

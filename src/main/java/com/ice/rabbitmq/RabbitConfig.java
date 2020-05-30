@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * @author ice
  * @date 18-11-8 上午9:48
  */
-@Component
+//@Component
 public class RabbitConfig {
 
     @Autowired
