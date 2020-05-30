@@ -1,27 +1,27 @@
 package com.ice.hibernate.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import com.ice.hibernate.dao.UserDao;
+import com.ice.hibernate.entity.User;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.ice.hibernate.dao.BaseUserDao;
-import com.ice.hibernate.entity.BaseUser;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/user")
 public class UserController {
 
-    private final BaseUserDao baseUserDao;
+    private final UserDao userDao;
 
-    public UserController(BaseUserDao baseUserDao) {
-        this.baseUserDao = baseUserDao;
+    public UserController(UserDao userDao) {
+        this.userDao = userDao;
     }
 
-    @RequestMapping("/a")
+    @GetMapping("/getUser")
     public void test(){
-        List<BaseUser> users = baseUserDao.findByName("1");
-        for (BaseUser user:users) {
+        List<User> users = userDao.findByName("1");
+        for (User user:users) {
             System.out.println(user.getRealName());
         }
     }

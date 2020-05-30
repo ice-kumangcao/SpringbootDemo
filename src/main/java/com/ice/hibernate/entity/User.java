@@ -10,8 +10,8 @@ import java.io.Serializable;
 
 @Entity
 @Data
-@Table(name="base_user")
-public class BaseUser implements Serializable {
+@Table(name="user")
+public class User implements Serializable {
 	@Id
 	private String id;
 
@@ -19,6 +19,7 @@ public class BaseUser implements Serializable {
 
     private String password;
 
+    @Column(name = "real_name")
     private String realName;
 
 }

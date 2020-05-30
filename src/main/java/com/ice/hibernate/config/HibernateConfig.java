@@ -1,23 +1,20 @@
 package com.ice.hibernate.config;
 
 import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
 import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-public class MysqlConfig {
+public class HibernateConfig {
 
     private final Environment env;
 
-    public MysqlConfig(Environment env) {
+    public HibernateConfig(Environment env) {
         this.env = env;
     }
 
@@ -29,10 +26,8 @@ public class MysqlConfig {
         properties.put("hibernate.show_sql", env.getProperty("spring.jpa.show-sql"));
         properties.put("current_session_context_class",
                 env.getProperty("spring.jpa.properties.hibernate.current_session_context_class"));
-
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
-
-        factoryBean.setPackagesToScan(new String[]{""});
+        factoryBean.setPackagesToScan("com.ice");
         factoryBean.setDataSource(dataSource);
         factoryBean.setHibernateProperties(properties);
         factoryBean.afterPropertiesSet();
@@ -43,5 +38,4 @@ public class MysqlConfig {
 
         return sessionFactory;
     }
-
 }

@@ -3,26 +3,25 @@ package com.ice.hibernate.dao.impl;
 import com.ice.hibernate.dao.BaseDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import com.ice.hibernate.dao.BaseUserDao;
-import com.ice.hibernate.entity.BaseUser;
+import com.ice.hibernate.dao.UserDao;
+import com.ice.hibernate.entity.User;
 
 import javax.transaction.Transactional;
 import java.util.List;
 
 @Transactional
-@Repository("baseUserDaoImpl")
-public class BaseUserDaoImpl implements BaseUserDao {
+@Repository
+public class UserDaoImpl implements UserDao {
 
-    @Autowired
-    private BaseDao baseDao;
+    private final BaseDao baseDao;
 
-    BaseDao getBaseDao() {
-        return baseDao;
+    public UserDaoImpl(BaseDao baseDao) {
+        this.baseDao = baseDao;
     }
 
     @Override
-    public List<BaseUser> findByName(final String name) {
-        String hql = "from BaseUser where username = '1'";
+    public List<User> findByName(String name) {
+        String hql = "from User where username = '1'";
         try {
             return baseDao.findBySql(hql);
         } catch (Exception e) {

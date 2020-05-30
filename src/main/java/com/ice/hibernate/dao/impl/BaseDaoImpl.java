@@ -12,7 +12,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Transactional
-@Repository("baseDaoImpl")
+@Repository
 public class BaseDaoImpl extends HibernateDaoSupport implements BaseDao {
 
     @Autowired
